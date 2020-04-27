@@ -27,5 +27,7 @@ def short_binary_search(ordered_list, term):
             low_border = low_border+int((high_border-low_border)/2)
     return False
 
-
+print(long_binary_search([1,2,3,5], 3))
 print(short_binary_search([1,2,3,5], 3))
+print(long_binary_search([1,2,3,5,9,12], 7))
+print(short_binary_search([1,2,3,5,9,12], 7))
