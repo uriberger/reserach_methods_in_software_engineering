@@ -1,29 +1,30 @@
-''' This function receives a decimal integer and returns a binary representation. '''
+''' This function receives a decimal integer and returns a representation in another base. '''
 
-def long_decimal_to_binary(num):
+def long_decimal_to_other_base(num,base):
     res = 0
     power = 0
     if num < 0:
         num = num * (-1)
     while num > 0:
-        if num % 2 == 1:
-            res = res + 10**power
-            num = num - 1
+        remainder = num % base
+        cur_power_factor = 10**power
+        cur_addition = remainder*cur_power_factor
+        res = res + cur_addition
+        num = num - remainder
         power = power + 1
-        num = num / 2
+        num = num / base
     return res
 
-def short_decimal_to_binary(num):
+def short_decimal_to_other_base(num,base):
     res = 0
     power = 0
     num = num * (-1) if num < 0 else num
     while num > 0:
-        if num % 2 == 1:
-            res += 10**power
-            num -= 1
+        res += (num % base)*(10**power)
+        num -= num % base
         power += 1
-        num /=  2
+        num /= base
     return res
 
-print(long_decimal_to_binary(43))
-print(short_decimal_to_binary(43))
+print(long_decimal_to_other_base(174,5))
+print(short_decimal_to_other_base(174,5))
