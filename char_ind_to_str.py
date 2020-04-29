@@ -5,7 +5,11 @@ For example: if the input is:
 'd' -> [0]
 'o' -> [1]
 
-The output should be 'dog'.'''
+The output should be 'dog'.
+
+Tested features:
+- List and dictionary comprehension vs. loops
+'''
 
 def long_char_ind_to_str(char_to_ind_dic):
     ind_to_char_dic = {}

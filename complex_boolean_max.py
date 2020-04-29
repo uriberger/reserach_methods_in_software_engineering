@@ -1,14 +1,18 @@
 ''' This function receives three lists: search_list, include_list, exclude_list, and an integer
 "num". It returns the maximum negative value in search_list which is included in include_list and
 is not divisible by num, or not included in exclude_list and is divisible by num, or minus infinity
-if such a number doesn't exist.'''
+if such a number doesn't exist.
+
+Features tested:
+- Multiple if statements vs. complex boolean expression
+'''
 
 import math
 
 def long_complex_boolean_max(search_list, include_list, exclude_list, num):
     largest = (-1)*math.inf
     for x in search_list:
-        if x > largest:
+        if x > largest: # Multiple if statements
             if x < 0:
                 if x in include_list:
                     if not x % num == 0:
@@ -22,7 +26,7 @@ def long_complex_boolean_max(search_list, include_list, exclude_list, num):
 def short_complex_boolean_max(search_list, include_list, exclude_list, num):
     largest = (-1)*math.inf
     for x in search_list:
-        if ((x in include_list and not x % num == 0) or (x not in exclude_list and x % num == 0)) and x < 0 and x > largest:
+        if ((x in include_list and not x % num == 0) or (x not in exclude_list and x % num == 0)) and x < 0 and x > largest: # Complex boolean expression
             largest = x
             
     return largest
