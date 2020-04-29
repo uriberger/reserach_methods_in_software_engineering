@@ -1,11 +1,17 @@
 ''' This function receives two integers in 'base' representation, and returns the absolute value of
 their difference (also in 'base' representation).
 
-Tested features:
+Features tested:
 - Use of temporary variables vs. single line computation
 - Multiple lines computation vs. single line computation
 - Use of compound assignment operators vs. use of =
 - Use of if statement vs. use of ternary assignment
+
+Possible bug creations:
+- "carry = carry + 1" -> "carry = carry + base"
+- "diff = diff + base" -> "diff = diff + 1"
+- "digit1 = num1 % 10" -> "digit1 = num1 / 10" (and same for digit2)
+- "cur_power_factor = 10**power" -> "cur_power_factor = 10*power"
 '''
 
 import math

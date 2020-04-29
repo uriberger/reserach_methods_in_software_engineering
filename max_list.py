@@ -5,6 +5,9 @@ l2[p2[i]].
 Features tested:
 - Use of temporary variables vs. single line computation
 - Use of if statement vs. use of ternary assignment
+
+Possible bug creations:
+- Replace all "l1[p1[i]]" to "l1[i]" and all "l2[p2[i]]" to "l2[i]"
 '''
 
 def long_max_list(l1,l2,p1,p2):

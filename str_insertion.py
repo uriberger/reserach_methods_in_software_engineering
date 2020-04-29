@@ -7,6 +7,9 @@ Features tested:
 - Use of compound assignment operators vs. use of =
 - Use of "string multiplication" vs. a loop
 - Use of temporary variables vs. single line computation
+
+Possible bug creations:
+- "for _ in range(insert_count):" -> "for _ in range(cur_ind):"
 '''
 
 def long_str_insertion(str1,str2,my_char,escape_char,max_insert_count):

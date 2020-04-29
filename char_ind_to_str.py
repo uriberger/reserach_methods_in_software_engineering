@@ -7,7 +7,7 @@ For example: if the input is:
 
 The output should be 'dog'.
 
-Tested features:
+Features tested:
 - List and dictionary comprehension vs. loops
 '''
 

@@ -6,6 +6,9 @@ Features tested:
 - Multiple if statements vs. complex boolean expression
 - Use of compound assignment operators vs. use of =
 - Use of temporary variables vs. single line computation
+
+Possible bug creations:
+- "if len(cur_str) >= index:" -> "if cur_str >= index:"
 '''
 
 def long_str_list_bubble_sort(my_str,index,exclude_string,sep_char):

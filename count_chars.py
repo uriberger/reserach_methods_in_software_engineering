@@ -4,6 +4,9 @@ returns the characters that appear more than 'threshold' times.
 Features tested:
 - List and dictionary comprehension vs. loops
 - Use of compound assignment operators vs. use of =
+
+Possible bug creations:
+- "if count_dics[count_char] > threshold:" -> "if count_char > threshold:"
 '''
 
 def long_count_chars(corpus, count_chars, threshold):

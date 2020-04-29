@@ -1,4 +1,4 @@
-'''This function receives a list as an input, an outputs the most significant digit for all the
+''' This function receives a list as an input, an outputs the most significant digit for all the
 numbers in the list which are in the range of (small_num,large_num) and are divisible by
 include_factor and are not divisible by exclude_factor. The result should be in string form, with
 commas separating the different digits.
@@ -7,6 +7,9 @@ Features tested:
 - Multiple if statements vs. complex boolean expression
 - Use of temporary variables vs. single line computation
 - Use of compound assignment operators vs. use of =
+
+Possible bug creations:
+- Remove "most_significant_digit_int = math.floor(most_significant_digit_float)" (it should be an int, without this line it will be a float)
 '''
 
 import math

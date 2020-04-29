@@ -1,7 +1,11 @@
 ''' This function performs a binary search.
 
-Tested features:
+Features tested:
 - Use of temporary variables vs. a single line computation
+
+Possible bug creations:
+- "half_len = math.floor(cur_len/2)" -> "half_len = cur_len/2"
+- "center_location = low_border+half_len" -> "center_location = high_border+half_len"
 '''
 
 import math

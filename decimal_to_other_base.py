@@ -4,6 +4,11 @@ Features tested:
 - Use of if statement vs. use of ternary assignment
 - Use of temporary variables vs. single line computation
 - Use of compound assignment operators vs. use of =
+
+Possible bug creations:
+- "remainder = num % base" -> "remainder = num % 10"
+- "cur_power_factor = 10**power" -> "cur_power_factor = 10*power"
+- "cur_addition = remainder*cur_power_factor" -> "cur_addition = remainder**cur_power_factor"
 '''
 
 def long_decimal_to_other_base(num,base):
