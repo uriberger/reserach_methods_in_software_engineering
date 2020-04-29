@@ -2,11 +2,13 @@
 their difference (also in 'base' representation).
 
 Tested features:
-- Use of temporary variables
+- Use of temporary variables vs. single line computation
 - Multiple lines computation vs. single line computation
 - Use of compound assignment operators vs. use of =
 - Use of if statement vs. use of ternary assignment
 '''
+
+import math
 
 def long_absolute_value_of_diff(num1,num2,base):
     orig_num1 = num1
@@ -30,9 +32,9 @@ def long_absolute_value_of_diff(num1,num2,base):
         power = power + 1 # Use of =
         
         frac_num1 = num1 / 10 # Temporary variable
-        num1 = int(frac_num1)
+        num1 = math.floor(frac_num1)
         frac_num2 = num2 / 10 # Temporary variable
-        num2 = int(frac_num2)
+        num2 = math.floor(frac_num2)
     if carry > 0: # Use of if statement
         res = long_absolute_value_of_diff(orig_num2, orig_num1, base)
         
@@ -53,8 +55,8 @@ def short_absolute_value_of_diff(num1,num2,base):
         res += diff*(10**power) # No temporary variables, use of compound assignment operator
         power += 1 # Use of compound assignment operator
         
-        num1 = int(num1 / 10) # No temporary variable
-        num2 = int(num2 / 10) # No temporary variable
+        num1 = math.floor(num1 / 10) # No temporary variable
+        num2 = math.floor(num2 / 10) # No temporary variable
     res = long_absolute_value_of_diff(orig_num2, orig_num1, base) if carry > 0 else res # Use of ternary assignment
         
     return res
