@@ -12,6 +12,8 @@ Possible bug creations:
 - "diff = diff + base" -> "diff = diff + 1"
 - "digit1 = num1 % 10" -> "digit1 = num1 / 10" (and same for digit2)
 - "cur_power_factor = 10**power" -> "cur_power_factor = 10*power"
+
+We chose "carry = carry + 1" -> "carry = carry + base"
 '''
 
 import math
