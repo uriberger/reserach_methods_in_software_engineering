@@ -59,15 +59,10 @@ def short_str_list_bubble_sort(my_str, exclude_string, sep_char):
         if str_list != exclude_string and cur_str not in unique_list:
             unique_list.append(cur_str)
 
-    swapped = True
-    while swapped:
-        swapped = False
-        for i in range(len(unique_list) - 1):  # Single line computation
-            if unique_list[i][-1] > unique_list[i + 1][-1]:  # Single line computation
-                swapped = True
-                tmp = unique_list[i]
-                unique_list[i] = unique_list[i + 1]
-                unique_list[i + 1] = tmp
+    for i in range(len(unique_list) - 1):  # Single line computation
+        for j in range(0, len(unique_list) - i - 1):
+            if unique_list[j][-1] > unique_list[j + 1][-1]:  # Single line computation
+                unique_list[j], unique_list[j + 1] = unique_list[j + 1], unique_list[j]
 
     return unique_list
 
