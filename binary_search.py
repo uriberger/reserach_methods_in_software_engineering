@@ -36,7 +36,7 @@ def short_binary_search(ordered_list, term):
             == ordered_list[low_border + math.floor((high_border - low_border) / 2)]
         ):  # No temporary variable
             return True
-        elif (
+        if (
             term < ordered_list[low_border + math.floor((high_border - low_border) / 2)]
         ):  # No temporary variable
             high_border = low_border + math.floor(

@@ -36,9 +36,8 @@ def short_decimal_to_other_base(num, base):
         res += (num % base) * (
             10 ** power
         )  # Single line computation, use of compound assignment operator
-        num -= num % base  # Use of compound assignment operator
+        num = (num - (num % base)) / base  # Use of compound assignment operator
         power += 1  # Use of compound assignment operator
-        num /= base  # Use of compound assignment operator
     return res
 
 
