@@ -39,14 +39,10 @@ def short_str_insertion(str1, str2, my_char, max_insert_count):
         if (
             str1[cur_ind] == my_char and insert_count < max_insert_count
         ):  # Complex boolean expression, single line computation
-            res += str1[prev_ind: cur_ind + 1]  # Use of a compound assignment operator
             insert_count += 1  # Use of a compound assignment operator
-            res += (
-                insert_count * str2
-            )  # Use string multiplication, use of a compound assignment operator
+            res += str1[prev_ind: cur_ind + 1] + insert_count * str2  # Use of a compound assignment operator
             prev_ind = cur_ind + 1
     res += str1[prev_ind: cur_ind + 1]
-
     return res
 
 
