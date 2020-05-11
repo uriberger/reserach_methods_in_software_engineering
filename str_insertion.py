@@ -14,7 +14,6 @@ Possible bug creations:
 
 def long_str_insertion(str1, str2, my_char, max_insert_count):
     prev_ind = 0
-    prev_char = None
     insert_count = 0
     res = ""
     for cur_ind in range(len(str1)):
@@ -26,8 +25,7 @@ def long_str_insertion(str1, str2, my_char, max_insert_count):
                 for _ in range(insert_count):  # Use a loop
                     res = res + str2  # Use of =
                 prev_ind = cur_ind + 1
-        prev_char = cur_char
-    res = res + str1[prev_ind : cur_ind + 1]
+    res = res + str1[prev_ind: cur_ind + 1]
 
     return res
 
