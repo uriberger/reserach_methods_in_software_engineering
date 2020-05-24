@@ -1,45 +1,35 @@
-""" This function receives a string as input, and first separates it into substring separated by
-sep_char. It creates a list of the substrings, including only substrings different than
-exclude_string. It then sorts the list according to the *reversed string*.
+""" This function receives a list of strings as input, and sorts the list according to the reversed
+string.
 
 Features tested:
-- Multiple if statements vs. complex boolean expression
-- Use of compound assignment operators vs. use of =
 - Use of temporary variables vs. single line computation
-
-Possible bug creations:
-- "if len(cur_str) >= index:" -> "if cur_str >= index:"
+- Values switch using temporary variable vs. multiple assignment
 """
 
-
 def long_str_list_bubble_sort(str_list):
-    iterations_num = len(str_list) - 1
+    iterations_num = len(str_list) - 1 # Temporary variable
     for i in range(iterations_num):
-        internal_iterations = len(str_list) - i - 1
+        internal_iterations = len(str_list) - i - 1 # Temporary variable
         for j in range(0, internal_iterations):
-            str1 = str_list[j]
-            str2 = str_list[j+1]
-            compare1 = str1[::-1]
-            compare2 = str2[::-1]
+            str1 = str_list[j] # Temporary variable
+            str2 = str_list[j+1] # Temporary variable
+            compare1 = str1[::-1] # Temporary variable
+            compare2 = str2[::-1] # Temporary variable
             if compare1 > compare2:
-                str_list[j] = str2
-                str_list[j+1] = str1
+                str_list[j] = str2 # Values switch using a temporary variable
+                str_list[j+1] = str1 # Values switch using a temporary variable
     return str_list
 
 
 def short_str_list_bubble_sort(str_list):
-    for i in range(len(str_list) - 1):
-        for j in range(0, len(str_list) - i - 1):
-            if str_list[j][::-1] > str_list[j + 1][::-1]:
-                str_list[j], str_list[j + 1] = str_list[j + 1], str_list[j]
+    for i in range(len(str_list) - 1): # Single line computation
+        for j in range(0, len(str_list) - i - 1): # Single line computation
+            if str_list[j][::-1] > str_list[j + 1][::-1]: # Single line computation
+                str_list[j], str_list[j + 1] = str_list[j + 1], str_list[j] # Values switch using multiple assignment
     return str_list
 
 
-my_str = "without,hello,cruel,miau,my,world,crual,a,begin,hello,miau".split(",")
-exclude_string = "miau"
-sep_char = ","
+str_list = ["without","hello","cruel","miau","my","world","crual","a","begin","hello","miau"]
 
-print(long_str_list_bubble_sort(my_str))
-print(short_str_list_bubble_sort(my_str))
-
-
+print(long_str_list_bubble_sort(str_list))
+print(short_str_list_bubble_sort(str_list))
